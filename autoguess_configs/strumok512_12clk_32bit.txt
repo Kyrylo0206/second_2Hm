@@ -1,0 +1,160 @@
+# Strumok-512 12 clock cycles (32-bit words)
+connection relations
+A_0_H, A_0_L, S_0_H, S_0_L
+B_0_H, B_0_L, S_11_H, S_11_L
+S_16_H, A_0_H, B_0_H, S_13_H
+S_16_L, A_0_L, B_0_L, S_13_L
+V_0_L, S_15_L, R_0_L, carry_out_0
+V_0_H, S_15_H, R_0_H, carry_out_0
+z_0_H, V_0_H, R_1_H, S_0_H
+z_0_L, V_0_L, R_1_L, S_0_L
+R_2_L, R_1_L, S_13_L, carry_r1_0
+R_2_H, R_1_H, S_13_H, carry_r1_0
+R_3_H, R_3_L, R_0_H, R_0_L
+A_1_H, A_1_L, S_1_H, S_1_L
+B_1_H, B_1_L, S_12_H, S_12_L
+S_17_H, A_1_H, B_1_H, S_14_H
+S_17_L, A_1_L, B_1_L, S_14_L
+V_1_L, S_16_L, R_2_L, carry_out_1
+V_1_H, S_16_H, R_2_H, carry_out_1
+z_1_H, V_1_H, R_3_H, S_1_H
+z_1_L, V_1_L, R_3_L, S_1_L
+R_4_L, R_3_L, S_14_L, carry_r1_1
+R_4_H, R_3_H, S_14_H, carry_r1_1
+R_5_H, R_5_L, R_2_H, R_2_L
+A_2_H, A_2_L, S_2_H, S_2_L
+B_2_H, B_2_L, S_13_H, S_13_L
+S_18_H, A_2_H, B_2_H, S_15_H
+S_18_L, A_2_L, B_2_L, S_15_L
+V_2_L, S_17_L, R_4_L, carry_out_2
+V_2_H, S_17_H, R_4_H, carry_out_2
+z_2_H, V_2_H, R_5_H, S_2_H
+z_2_L, V_2_L, R_5_L, S_2_L
+R_6_L, R_5_L, S_15_L, carry_r1_2
+R_6_H, R_5_H, S_15_H, carry_r1_2
+R_7_H, R_7_L, R_4_H, R_4_L
+A_3_H, A_3_L, S_3_H, S_3_L
+B_3_H, B_3_L, S_14_H, S_14_L
+S_19_H, A_3_H, B_3_H, S_16_H
+S_19_L, A_3_L, B_3_L, S_16_L
+V_3_L, S_18_L, R_6_L, carry_out_3
+V_3_H, S_18_H, R_6_H, carry_out_3
+z_3_H, V_3_H, R_7_H, S_3_H
+z_3_L, V_3_L, R_7_L, S_3_L
+R_8_L, R_7_L, S_16_L, carry_r1_3
+R_8_H, R_7_H, S_16_H, carry_r1_3
+R_9_H, R_9_L, R_6_H, R_6_L
+A_4_H, A_4_L, S_4_H, S_4_L
+B_4_H, B_4_L, S_15_H, S_15_L
+S_20_H, A_4_H, B_4_H, S_17_H
+S_20_L, A_4_L, B_4_L, S_17_L
+V_4_L, S_19_L, R_8_L, carry_out_4
+V_4_H, S_19_H, R_8_H, carry_out_4
+z_4_H, V_4_H, R_9_H, S_4_H
+z_4_L, V_4_L, R_9_L, S_4_L
+R_10_L, R_9_L, S_17_L, carry_r1_4
+R_10_H, R_9_H, S_17_H, carry_r1_4
+R_11_H, R_11_L, R_8_H, R_8_L
+A_5_H, A_5_L, S_5_H, S_5_L
+B_5_H, B_5_L, S_16_H, S_16_L
+S_21_H, A_5_H, B_5_H, S_18_H
+S_21_L, A_5_L, B_5_L, S_18_L
+V_5_L, S_20_L, R_10_L, carry_out_5
+V_5_H, S_20_H, R_10_H, carry_out_5
+z_5_H, V_5_H, R_11_H, S_5_H
+z_5_L, V_5_L, R_11_L, S_5_L
+R_12_L, R_11_L, S_18_L, carry_r1_5
+R_12_H, R_11_H, S_18_H, carry_r1_5
+R_13_H, R_13_L, R_10_H, R_10_L
+A_6_H, A_6_L, S_6_H, S_6_L
+B_6_H, B_6_L, S_17_H, S_17_L
+S_22_H, A_6_H, B_6_H, S_19_H
+S_22_L, A_6_L, B_6_L, S_19_L
+V_6_L, S_21_L, R_12_L, carry_out_6
+V_6_H, S_21_H, R_12_H, carry_out_6
+z_6_H, V_6_H, R_13_H, S_6_H
+z_6_L, V_6_L, R_13_L, S_6_L
+R_14_L, R_13_L, S_19_L, carry_r1_6
+R_14_H, R_13_H, S_19_H, carry_r1_6
+R_15_H, R_15_L, R_12_H, R_12_L
+A_7_H, A_7_L, S_7_H, S_7_L
+B_7_H, B_7_L, S_18_H, S_18_L
+S_23_H, A_7_H, B_7_H, S_20_H
+S_23_L, A_7_L, B_7_L, S_20_L
+V_7_L, S_22_L, R_14_L, carry_out_7
+V_7_H, S_22_H, R_14_H, carry_out_7
+z_7_H, V_7_H, R_15_H, S_7_H
+z_7_L, V_7_L, R_15_L, S_7_L
+R_16_L, R_15_L, S_20_L, carry_r1_7
+R_16_H, R_15_H, S_20_H, carry_r1_7
+R_17_H, R_17_L, R_14_H, R_14_L
+A_8_H, A_8_L, S_8_H, S_8_L
+B_8_H, B_8_L, S_19_H, S_19_L
+S_24_H, A_8_H, B_8_H, S_21_H
+S_24_L, A_8_L, B_8_L, S_21_L
+V_8_L, S_23_L, R_16_L, carry_out_8
+V_8_H, S_23_H, R_16_H, carry_out_8
+z_8_H, V_8_H, R_17_H, S_8_H
+z_8_L, V_8_L, R_17_L, S_8_L
+R_18_L, R_17_L, S_21_L, carry_r1_8
+R_18_H, R_17_H, S_21_H, carry_r1_8
+R_19_H, R_19_L, R_16_H, R_16_L
+A_9_H, A_9_L, S_9_H, S_9_L
+B_9_H, B_9_L, S_20_H, S_20_L
+S_25_H, A_9_H, B_9_H, S_22_H
+S_25_L, A_9_L, B_9_L, S_22_L
+V_9_L, S_24_L, R_18_L, carry_out_9
+V_9_H, S_24_H, R_18_H, carry_out_9
+z_9_H, V_9_H, R_19_H, S_9_H
+z_9_L, V_9_L, R_19_L, S_9_L
+R_20_L, R_19_L, S_22_L, carry_r1_9
+R_20_H, R_19_H, S_22_H, carry_r1_9
+R_21_H, R_21_L, R_18_H, R_18_L
+A_10_H, A_10_L, S_10_H, S_10_L
+B_10_H, B_10_L, S_21_H, S_21_L
+S_26_H, A_10_H, B_10_H, S_23_H
+S_26_L, A_10_L, B_10_L, S_23_L
+V_10_L, S_25_L, R_20_L, carry_out_10
+V_10_H, S_25_H, R_20_H, carry_out_10
+z_10_H, V_10_H, R_21_H, S_10_H
+z_10_L, V_10_L, R_21_L, S_10_L
+R_22_L, R_21_L, S_23_L, carry_r1_10
+R_22_H, R_21_H, S_23_H, carry_r1_10
+R_23_H, R_23_L, R_20_H, R_20_L
+A_11_H, A_11_L, S_11_H, S_11_L
+B_11_H, B_11_L, S_22_H, S_22_L
+S_27_H, A_11_H, B_11_H, S_24_H
+S_27_L, A_11_L, B_11_L, S_24_L
+V_11_L, S_26_L, R_22_L, carry_out_11
+V_11_H, S_26_H, R_22_H, carry_out_11
+z_11_H, V_11_H, R_23_H, S_11_H
+z_11_L, V_11_L, R_23_L, S_11_L
+R_24_L, R_23_L, S_24_L, carry_r1_11
+R_24_H, R_23_H, S_24_H, carry_r1_11
+R_25_H, R_25_L, R_22_H, R_22_L
+known
+z_0_H
+z_0_L
+z_1_H
+z_1_L
+z_2_H
+z_2_L
+z_3_H
+z_3_L
+z_4_H
+z_4_L
+z_5_H
+z_5_L
+z_6_H
+z_6_L
+z_7_H
+z_7_L
+z_8_H
+z_8_L
+z_9_H
+z_9_L
+z_10_H
+z_10_L
+z_11_H
+z_11_L
+end
